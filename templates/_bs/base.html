@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PySite</title>
+<!-- Bootstrap -->
+<link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/css/bs/font-nanumgothic.css" rel="stylesheet">
+{% block csslink %}{% endblock %}
+<style>
+body { background-color: #E9EBEE }
+.container-fluid { padding: 0 }
+
+header {
+    height: 42px;
+    position: relative;
+    width: 100%;
+    background-color: #4267b2;
+    border-bottom: 1px solid #29487d;
+}
+
+header h1 {
+    float:left;
+    font-family: tahoma;
+    font-size: 22px;
+    font-weight: bold;
+    color:  #fff;
+    margin:0 0 0 20px;
+    padding: 0;
+    width:100px;
+    height: 42px;
+    line-height: 42px;
+}
+
+header ul {
+    list-style-type: none;
+    float: right;
+    height: 20px;
+    margin:10px 20px 0 0;
+}
+
+header ul li {
+    color: #fff;
+    float: left;
+    padding-left: 10px;
+}
+
+header ul li a {
+    font-weight: bold;
+}
+
+header ul li a:link,
+header ul li a:visited,
+header ul li a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+footer {
+	text-align: center;
+}
+
+ul.nav {
+    width: 100%;
+}
+
+ul.nav li {
+    text-align: left;
+    margin: 5px 0 5px 4px;
+    overflow: hidden;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #222;
+}
+
+.nav>li>a {
+    padding:5px 15px;
+}
+
+ul.nav li a {
+    padding-left:6px;
+    text-align: left;
+}
+
+ul.nav li a:link,
+ul.nav li a:hover,
+ul.nav li a:visited {
+    color: #555;
+}
+
+ul.nav li.profile {
+    position: relative;
+    padding-top:20px;
+    padding-bottom:40px;
+}
+
+ul.nav li.selected {
+    border:1px solid #ccc;
+    background-color: #F5F6F7
+}
+
+ul.nav li.profile span, ul.nav li.profile a {
+    display: block;
+}
+
+ul.nav li span.pic {
+    background: url('/assets/images/profile.jpg') no-repeat 0 0;
+    background-size: 50px 50px;
+    height: 52px;
+    width: 52px;
+    border:1px solid #bbb;
+}
+
+ul.nav li.profile p {
+    position: absolute;
+    left: 60px;
+    top: 20px;
+    font-size: 13px;
+}
+
+ul.nav li.profile {
+}
+
+</style>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="container-fluid">
+		<header>
+			<h1>MySite</h1>
+			<ul>
+				<li><a href="/user/loginform">로그인</a></li>
+				<li><a href="/user/joinform">회원가입</a></li>
+			</ul>
+		</header>
+		<div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-2">
+                        <ul class="nav">
+                            <li class='profile'>
+                                <span class="pic"></span>
+                                <p>
+                                    <a href="#">안대혁</a>
+                                    <span class="id">@kickscar</span>
+                                </p>
+                            </li>
+                            <li><a href="#">방명록</a></li>
+                            <li><a href="#">방명록-AJAX</a></li>
+                            <li class='selected'><a href="#">게시판</a></li>
+                            <li><a href="#">갤러리</a></li>
+                            <li><a href="#">JBlog</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+		</div>
+		<hr>
+		<footer>
+			여기는 푸터가 들어가는 곳입니다.
+		</footer>
+	</div>
+</body>
+</html>
