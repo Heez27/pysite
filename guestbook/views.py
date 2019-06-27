@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
@@ -34,4 +34,8 @@ def delete(request):
 
     return HttpResponseRedirect('/guestbook')
 
+
+def list(request, pageno):
+    pageno = 1 if pageno is None else pageno
+    return HttpResponse(f'pageno:{pageno}')
 
